@@ -1,24 +1,15 @@
-function factorial(n) {
-    if (n === 0) return 0
-    else if (n === 1) return 1
+let arr = ['banana', 'apple', 'mango', 'water-melon', 'Kiwi']
+let split = arr.join('*');
+console.log(split);
 
-    let first_number = 0;
-    let second_number = 1;
+console.log(arr.includes('Kiwi'));
 
-    for (let i = 2; i <= n; i++) {
-        next_number = first_number + second_number;
-        first_number = second_number;
-        second_number = next_number;
-    }
+let result = arr.reduce((acc, val) => acc + "_-_" + val);
 
-    return second_number;
+let longestString = arr.reduce((acc, val) =>
+    val.length > acc.length ? val : acc
+)
 
-}
+console.log(result)
 
-console.log(factorial(0));
-console.log(factorial(1));
-console.log(factorial(2));
-console.log(factorial(3));
-console.log(factorial(4));
-console.log(factorial(5));
-console.log(factorial(6));
+console.log(longestString)
